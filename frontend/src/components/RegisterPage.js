@@ -17,7 +17,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/api/auth/register", formData);
+      const res = await axios.post("https://mypocketai.onrender.com/api/auth/register", formData);
       setMessage(res.data.message);
       navigate("/login");
     } catch (err) {

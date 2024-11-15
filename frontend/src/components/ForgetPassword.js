@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      await axios.post("http://localhost:3001/api/auth/forgot-password", { email });
+      await axios.post("https://mypocketai.onrender.com/api/auth/forgot-password", { email });
       setMessage("Please check your mail to reset password.");
       setSuccess(true);
 

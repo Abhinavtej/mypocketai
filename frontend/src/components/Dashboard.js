@@ -30,7 +30,7 @@ function Dashboard() {
       try {
         const token = localStorage.getItem("token");
   
-        const res = await axios.get("http://localhost:3001/api/auth/user-details", {
+        const res = await axios.get("https://mypocketai.onrender.com/api/auth/user-details", {
           headers: { Authorization: `Bearer ${token}` },
         });
   

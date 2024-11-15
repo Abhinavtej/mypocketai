@@ -29,10 +29,10 @@ const ExpenseManagement = () => {
         }
   
         const [expenseResponse, budgetResponse] = await Promise.all([
-          axios.get("http://localhost:3001/api/expense", {
+          axios.get("https://mypocketai.onrender.com/api/expense", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:3001/api/budget", {
+          axios.get("https://mypocketai.onrender.com/api/budget", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -90,7 +90,7 @@ const handleAddExpense = async () => {
     }
 
     await axios.post(
-      "http://localhost:3001/api/expense",
+      "https://mypocketai.onrender.com/api/expense",
       { category: selectedCategory, expense: expenseAmount },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -137,7 +137,7 @@ const handleUpdateExpense = async (id, updatedExpense) => {
     }
 
     await axios.put(
-      `http://localhost:3001/api/expense/${id}`,
+      `https://mypocketai.onrender.com/api/expense/${id}`,
       { expense: expenseAmount },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -160,7 +160,7 @@ const handleUpdateExpense = async (id, updatedExpense) => {
         return;
       }
 
-      await axios.delete(`http://localhost:3001/api/expense/${id}`, {
+      await axios.delete(`https://mypocketai.onrender.com/api/expense/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -180,7 +180,7 @@ const handleUpdateExpense = async (id, updatedExpense) => {
         return;
       }
 
-      const response = await axios.get("http://localhost:3001/api/expense", {
+      const response = await axios.get("https://mypocketai.onrender.com/api/expense", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

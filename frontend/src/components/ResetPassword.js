@@ -27,7 +27,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:3001/api/auth/reset-password/${token}`, {
+      const response = await axios.post(`https://mypocketai.onrender.com/api/auth/reset-password/${token}`, {
         password,
       });
       setMessage(response.data.message || "Password reset successfully!");

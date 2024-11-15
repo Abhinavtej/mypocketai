@@ -38,10 +38,10 @@ const BudgetAllocation = () => {
         }
   
         const [incomeResponse, budgetResponse] = await Promise.all([
-          axios.get("http://localhost:3001/api/income", {
+          axios.get("https://mypocketai.onrender.com/api/income", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:3001/api/budget", {
+          axios.get("https://mypocketai.onrender.com/api/budget", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -97,7 +97,7 @@ const BudgetAllocation = () => {
       if (existingBudget) {
         // If the category already exists, update the existing budget by adding the new allocation
         await axios.put(
-          `http://localhost:3001/api/budget/${existingBudget._id}`,
+          `https://mypocketai.onrender.com/api/budget/${existingBudget._id}`,
           { budgetAllocated: existingBudget.budgetAllocated + newAllocation },
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -108,7 +108,7 @@ const BudgetAllocation = () => {
       } else {
         // If the category doesn't exist, create a new budget entry
         await axios.post(
-          "http://localhost:3001/api/budget",
+          "https://mypocketai.onrender.com/api/budget",
           { category: selectedCategory, budgetAllocated: newAllocation },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -137,10 +137,10 @@ const BudgetAllocation = () => {
   
     try {
       const [incomeResponse, budgetResponse] = await Promise.all([
-        axios.get("http://localhost:3001/api/income", {
+        axios.get("https://mypocketai.onrender.com/api/income", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:3001/api/budget", {
+        axios.get("https://mypocketai.onrender.com/api/budget", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -178,7 +178,7 @@ const BudgetAllocation = () => {
       }
   
       await axios.put(
-        `http://localhost:3001/api/budget/${id}`,
+        `https://mypocketai.onrender.com/api/budget/${id}`,
         { budgetAllocated: updatedAllocation },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -189,10 +189,10 @@ const BudgetAllocation = () => {
   
       // Inline the refresh data logic
       const [incomeResponse, budgetResponse] = await Promise.all([
-        axios.get("http://localhost:3001/api/income", {
+        axios.get("https://mypocketai.onrender.com/api/income", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:3001/api/budget", {
+        axios.get("https://mypocketai.onrender.com/api/budget", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -216,7 +216,7 @@ const BudgetAllocation = () => {
         return;
       }
   
-      await axios.delete(`http://localhost:3001/api/budget/${id}`, {
+      await axios.delete(`https://mypocketai.onrender.com/api/budget/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
   
@@ -224,10 +224,10 @@ const BudgetAllocation = () => {
   
       // Inline the refresh data logic
       const [incomeResponse, budgetResponse] = await Promise.all([
-        axios.get("http://localhost:3001/api/income", {
+        axios.get("https://mypocketai.onrender.com/api/income", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:3001/api/budget", {
+        axios.get("https://mypocketai.onrender.com/api/budget", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);

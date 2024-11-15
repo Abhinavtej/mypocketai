@@ -29,7 +29,7 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      const res = await axios.post("https://mypocketai.azurewebsites.net/api/auth/login", formData);
+      const res = await axios.post("https://mypocketai.onrender.com/api/auth/login", formData);
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
     } catch (err) {

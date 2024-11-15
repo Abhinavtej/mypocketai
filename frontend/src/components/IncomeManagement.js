@@ -30,7 +30,7 @@ const IncomeManagement = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:3001/api/income", {
+        const response = await axios.get("https://mypocketai.onrender.com/api/income", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIncomeList(response.data.income);
@@ -58,7 +58,7 @@ const IncomeManagement = () => {
       }
 
       await axios.post(
-        "http://localhost:3001/api/income",
+        "https://mypocketai.onrender.com/api/income",
         { source: selectedSource, income: newAmount },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -67,7 +67,7 @@ const IncomeManagement = () => {
       setMessage("Income added successfully!");
       setNewAmount("");
       setSelectedSource("");
-      const response = await axios.get("http://localhost:3001/api/income", {
+      const response = await axios.get("https://mypocketai.onrender.com/api/income", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setIncomeList(response.data.income);
@@ -100,7 +100,7 @@ const IncomeManagement = () => {
 
       // Send the update request to the backend
       await axios.put(
-        `http://localhost:3001/api/income/${id}`,
+        `https://mypocketai.onrender.com/api/income/${id}`,
         { income: newIncome },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -120,7 +120,7 @@ const IncomeManagement = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:3001/api/income/${id}`, {
+      await axios.delete(`https://mypocketai.onrender.com/api/income/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

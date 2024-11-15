@@ -82,7 +82,7 @@ const Reports = () => {
 
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3001/api/reports", {
+        const response = await axios.get("https://mypocketai.onrender.com/api/reports", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
