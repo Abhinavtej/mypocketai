@@ -62,7 +62,7 @@ router.post("/forgot-password", async (req, res) => {
     from: process.env.EMAIL,
     to: email,
     subject: "Password Reset",
-    text: `Click here to reset your password: http://localhost:3000/reset-password/${resetToken}`,
+    text: `Click here to reset your password: https://www.mypocketai.tech/reset-password/${resetToken}`,
   };
 
   transporter.sendMail(mailOptions, (err, info) => {
